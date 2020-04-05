@@ -35,6 +35,16 @@ class MainActivity : AppCompatActivity() {
 
         val tiroLivreBButton: Button = findViewById(R.id.tiroLivreBButton)
         tiroLivreBButton.setOnClickListener(View.OnClickListener { addTiroLivreTimeB() })
+
+        val restartButton: Button = findViewById(R.id.restartGameButton)
+        restartButton.setOnClickListener(View.OnClickListener { restartGame() })
+    }
+
+    private fun restartGame() {
+        pontuacaoTimeA = 0
+        mostrarPlacarTimeA(pontuacaoTimeA)
+        pontuacaoTimeB = 0
+        mostrarPlacarTimeB(pontuacaoTimeB)
     }
 
     fun mostrarPlacarTimeA (pontuacao: Int) {
