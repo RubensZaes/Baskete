@@ -9,8 +9,10 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     var pontuacaoTimeA: Int = 0
+    var pontuacaoTimeB: Int = 0
 
     lateinit var placarTimeATextView: TextView
+    lateinit var placarTimeBTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,15 @@ class MainActivity : AppCompatActivity() {
 
         val tiroLivreAButton: Button = findViewById(R.id.tiroLivreAButton)
         tiroLivreAButton.setOnClickListener(View.OnClickListener { addTiroLivreTimeA() })
+
+        val tresPontosBButton: Button = findViewById(R.id.tresPontosBButton)
+        tresPontosBButton.setOnClickListener(View.OnClickListener { addTresPontosTimeB() })
+
+        val doisPontosBButton: Button = findViewById(R.id.doisPontosBButton)
+        doisPontosBButton.setOnClickListener(View.OnClickListener { addDoisPontosTimeB() })
+
+        val tiroLivreBButton: Button = findViewById(R.id.tiroLivreBButton)
+        tiroLivreBButton.setOnClickListener(View.OnClickListener { addTiroLivreTimeB() })
     }
 
     fun mostrarPlacarTimeA (pontuacao: Int) {
@@ -31,16 +42,38 @@ class MainActivity : AppCompatActivity() {
         placarTimeATextView.setText(pontuacao.toString())
     }
 
-    fun addTresPontosTimeA() {
+    private fun addTresPontosTimeA() {
         pontuacaoTimeA = pontuacaoTimeA + 3
         mostrarPlacarTimeA(pontuacaoTimeA)
     }
-    fun addDoisPontosTimeA() {
+
+    private fun addDoisPontosTimeA() {
        pontuacaoTimeA = pontuacaoTimeA + 2
         mostrarPlacarTimeA(pontuacaoTimeA)
     }
-    fun addTiroLivreTimeA() {
+
+    private fun addTiroLivreTimeA() {
         pontuacaoTimeA = pontuacaoTimeA + 1
         mostrarPlacarTimeA(pontuacaoTimeA)
+    }
+
+    fun mostrarPlacarTimeB (pontuacao: Int) {
+        this.placarTimeBTextView = findViewById(R.id.placarTimeBTextView)
+        placarTimeBTextView.setText(pontuacaoTimeB.toString())
+    }
+
+    private fun addTresPontosTimeB() {
+        pontuacaoTimeB = pontuacaoTimeB + 3
+        mostrarPlacarTimeB(pontuacaoTimeB)
+    }
+
+    private fun addDoisPontosTimeB() {
+        pontuacaoTimeB = pontuacaoTimeB + 2
+        mostrarPlacarTimeB(pontuacaoTimeB)
+    }
+
+    private fun addTiroLivreTimeB() {
+        pontuacaoTimeB = pontuacaoTimeA + 1
+        mostrarPlacarTimeB(pontuacaoTimeB)
     }
 }
