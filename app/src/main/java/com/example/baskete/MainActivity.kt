@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addTiroLivreTimeB() {
-        pontuacaoTimeB = pontuacaoTimeA + 1
+        pontuacaoTimeB = pontuacaoTimeB + 1
         mostrarPlacarTimeB(pontuacaoTimeB)
     }
 }
